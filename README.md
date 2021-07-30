@@ -1,15 +1,41 @@
 # Spring Boot Reply Service
 
+## Building the project
+
+To build the project, simply run
+
+```
+./gradlew build
+```
+
+## Starting project
+
+To start the project, simply run
+
+```
+./gradlew bootRun
+```
+
+Once the service started, the endpoint will be available at `localhost:8080`, so you can make request to the service endpoint
+
+```json
+GET localhost:8080/reply/22-kbzw9ru
+
+{
+    message: "e8501e64cf0a9fa45e3c25aa9e77ffd5"
+}
+```
+
 ## API
 
 **String Reply Service**
 
 GET `/reply/{rule}-{message}`
 
-| Parameters | Type     | Description                                             |
-| ---------- | -------- | ------------------------------------------------------- |
-| `rule`     | `String` | a 2-digit rule that will be used to process the message |
-| `message`  | `String` | the message to be processed                             |
+| Parameters | Type     | Description                                                     |
+| ---------- | -------- | --------------------------------------------------------------- |
+| `rule`     | `String` | a 2-digit rule that will be used to process the message         |
+| `message`  | `String` | the message to be processed in the following format `[a-z0-9]*` |
 
 ### Rules
 

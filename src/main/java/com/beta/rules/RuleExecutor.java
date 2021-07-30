@@ -3,6 +3,7 @@ package com.beta.rules;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.beta.rules.validator.MessageValidator;
 import com.beta.rules.validator.RuleValidator;
 
 public class RuleExecutor {
@@ -15,6 +16,7 @@ public class RuleExecutor {
 
     public static String execute(String rule, String message) throws Exception {
 	RuleValidator.validate(rule);
+	MessageValidator.validate(message);
 	String result = message;
 
 	for (int i = 0; i < rule.length(); i++) {
